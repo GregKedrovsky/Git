@@ -7,9 +7,9 @@ https://ndpsoftware.com/git-cheatsheet.html
 ## Git Projects
 
 A Git project has three parts:
-1. Working Directory - where files are created, edited, deleted, and organized
-2. Staging Area      - where changes that are made to the working directory are listed
-3. Repository        - where Git permanently stores changes as different versions of the project
+|1. Working Directory | where files are created, edited, deleted, and organized |
+|2. Staging Area      | where changes that are made to the working directory are listed |
+|3. Repository        | where Git permanently stores changes as different versions of the project |
 
 ## Git Workflow
 
@@ -47,8 +47,8 @@ Set git username globally (for **every** repo on your machine)
 Set git username for a single repo only: 
 ```
 cd /dir/for/local/repo                 # change to the local repo working directory
- git config user.name "Greg Kedrovsky"  # set the name for this local repo only
- git config user.name                   # confirm you set the name correctly
+git config user.name "Greg Kedrovsky"  # set the name for this local repo only
+git config user.name                   # confirm you set the name correctly
 ```
 
 **email:** GitHub uses your commit email address to associate commits with your account on GitHub.com. 
