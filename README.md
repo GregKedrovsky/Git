@@ -7,7 +7,8 @@ https://ndpsoftware.com/git-cheatsheet.html
 ## Git Projects
 
 A Git project has three parts:
-
+| whatever | whatever |
+|----------|----------|
 |1. Working Directory | where files are created, edited, deleted, and organized |
 |2. Staging Area      | where changes that are made to the working directory are listed |
 |3. Repository        | where Git permanently stores changes as different versions of the project |
