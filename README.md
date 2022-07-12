@@ -3,9 +3,9 @@
 **Reference Docs:** [Details](https://git-scm.com/docs) & [Visual](https://ndpsoftware.com/git-cheatsheet.html)
 
 **Contents:**
-- Concepts: [GitHub](github), [projects](git-projects), [workflows](git-workflow)
-- Configuration: [username & email](git-username--email)
-- Commands: [common](common-commands), [stash](stash), [log](log), [amend](amend-flag), [alias](alias-commands), [branching](branching), [cloning](cloning)
+- Concepts: [`GitHub`](#github), [`projects`](#git-projects), [`workflows`](#git-workflow)
+- Configuration: [`username & email`](#git-username--email)
+- Commands: [`common`](#common-commands), [`stash`](#stash), [`log`](#log), [`amend`](#amend-flag), [`alias`](#alias-commands), [`branching`](#branching), [`cloning`](#cloning)
 
 ## GitHub
 
