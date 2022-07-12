@@ -1,8 +1,22 @@
 # Git
 
-Git Reference Docs:
-https://git-scm.com/docs
-https://ndpsoftware.com/git-cheatsheet.html
+**Reference Docs:** [Details](https://git-scm.com/docs) & [Visual](https://ndpsoftware.com/git-cheatsheet.html)
+
+**Contents:**
+- Concepts: [GitHub](github), [projects](git-projects), [workflows](git-workflow)
+- Configuration: [username & email](git-username--email)
+- Commands: [common](common-commands), [stash](stash), [log](log), [amend](amend-flag), [alias](alias-commands), [branching](branching), [cloning](cloning)
+
+## GitHub
+
+https://docs.github.com/en
+
+You can use GitHub to work on any file-based project, including coding projects, writing documentation, etc.
+- It is simply a site and service provided to store and share code (file-based information).
+
+Should be familiar with `clone`, `fetch`, `push`, `pull`, etc. 
+
+**NOTE:** GitHub has changed the naming convention of the main branch from `master` to `main`.
 
 ## Git Projects
 
@@ -15,19 +29,19 @@ A Git project has three parts:
 
 ## Git Workflow
 
-**Individual Projects:**
+### Individual Projects:
 1. Edit files in the working directory
 2. Add files to the staging area
 3. Save changes to a Git repository
 
-**Collaborative Projects, Single Repo:**
+### Collaborative Projects, Single Repo:
 1. Create a branch (copies the project for you to work on)
 2. Commit changes (after coding whatever, commit and push to GitHub; goes to your branch)
 3. Create a pull request (this is a discussion page for code changes between one branch and another)
 4. Review pull request (collaborators look it over and comment on what should be changed and why)
 5. Merge and delete branch (after a successful merge, delete your branch; keep things tidy)
 
-**Collaborative Projects, Cloned:**
+### Collaborative Projects, Cloned:
 1. Fetch and merge changes from the remote.
 2. Create a branch to work on a new project feature
 3. Develop the feature on your branch and commit your work
@@ -44,8 +58,8 @@ Git uses a username to associate commits with an identity. The Git username is N
 
 Set git username globally (for **every** repo on your machine)
 ```
- git config --global user.name "Greg Kedrovsky"  # set a new username
- git config --global user.name                   # confirm you set the name correctly
+git config --global user.name "Greg Kedrovsky"  # set a new username
+git config --global user.name                   # confirm you set the name correctly
 ```
 
 Set git username for a single repo only: 
@@ -61,8 +75,8 @@ GitHub uses your commit email address to associate commits with your account on 
 
 Setting your commit email address in Git: 
 ```
- git config --global user.email "gregkedro@gmail.com"  # set an email address
- git config --global user.email                        # confirm the email address is set correctly
+git config --global user.email "gregkedro@gmail.com"  # set an email address
+git config --global user.email                        # confirm the email address is set correctly
 ```
 
 ## Common Commands
@@ -90,32 +104,33 @@ A place to "stash" your local work temporarily in order to update a previous com
 
 Commands:
 ```
- git stash      # stores current work temporarily in a hidden local directory
- git stash pop  # retrieves the code you were working on and "stashed" to do something else
+git stash      # stores current work temporarily in a hidden local directory
+git stash pop  # retrieves the code you were working on and "stashed" to do something else
 ```
 
 ## Log
 
 Commands: 
 ```
- git log                            # view the commit history of the branch you currently have checked out.
- git log --oneline                  # shows list of commits in one-line format
- git log -S "keyword"               # displays a list of commits that contain the keyword in the message
- git log --oneline --graph --graph  # display repo history (branches & commits) visually
+git log                            # view the commit history of the branch you currently have checked out.
+git log --oneline                  # shows list of commits in one-line format
+git log -S "keyword"               # displays a list of commits that contain the keyword in the message
+git log --oneline --graph --graph  # display repo history (branches & commits) visually
 ```
 
 ## Amend Flag
  
 Allows you to correct mistakes and edit commits easily instead of creating a completely new commit.
 
-Workflow:
- 1. You makes changes and then do a standard commit
- 2. You find a couple simple mistakes and don't want to make an entire new commit
- 3. So, just fix your mistakes, then...
- 4. command:      
+**Workflow:**
+1. You makes changes and then do a standard commit
+2. You find a couple simple mistakes and don't want to make an entire new commit
+3. So, just fix your mistakes, then...
+4. command:      
+
 ```
-     git commit --amend            # updates your previous commit (replaces the entire previous commit)
-     git commit --amend --no-edit  # keeps the same commit message (no prompt for a new one)
+git commit --amend            # updates your previous commit (replaces the entire previous commit)
+git commit --amend --no-edit  # keeps the same commit message (no prompt for a new one)
 ```
 
 ## Alias Commands
@@ -124,31 +139,20 @@ Aliases let you alias a lengthy git command you need frequently.
 
 Examples: 
 ```
- git config --global alias.co "checkout"
- git config --global alias.br "branch"
- git config --global alias.glop "log --pretty=format:"%h %s" --graph"
+git config --global alias.co "checkout"
+git config --global alias.br "branch"
+git config --global alias.glop "log --pretty=format:"%h %s" --graph"
 ```
 
 Once the aliases are configured, next time you want to check out to another branch you could type the command:
 ```
- git co example_branch
+git co example_branch
 ```
 
 Instead of:
 ```
 git checkout example_branch
 ``` 
-
-## GitHub
-
-https://docs.github.com/en
-
-You can use GitHub to work on any file-based project, including coding projects, writing documentation, etc.
-- It is simply a site and service provided to store and share code (file-based information).
-
-Should be familiar with `clone`, `fetch`, `push`, `pull`, etc. 
-
-**NOTE:** GitHub has changed the naming convention of the main branch from `master` to `main`.
 
 ## Branching
 
