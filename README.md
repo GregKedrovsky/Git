@@ -39,17 +39,17 @@ Steps 1 and 4 are a safeguard against merge conflicts.
 **username:** Git uses a username to associate commits with an identity. The Git username is NOT the same as your GitHub username. Changing your username does NOT change previous commits.
 
 Set git username globally (for **every** repo on your machine)
-'''
+```
  git config --global user.name "Greg Kedrovsky"  # set a new username
  git config --global user.name                   # confirm you set the name correctly
-'''
+```
 
 Set git username for a single repo only: 
-'''
+```
 cd /dir/for/local/repo                 # change to the local repo working directory
  git config user.name "Greg Kedrovsky"  # set the name for this local repo only
  git config user.name                   # confirm you set the name correctly
-'''
+```
 
 **email:** GitHub uses your commit email address to associate commits with your account on GitHub.com. 
 
