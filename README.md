@@ -21,11 +21,11 @@ A Git project has three parts:
 3. Save changes to a Git repository
 
 **Collaborative Projects, Single Repo:**
-1. Create a branch          # copies the project for you to work on
-2. Commit changes           # after coding whatever, commit and push to GitHub (goes to your branch)
-3. Create a pull request    # this is a discussion page for code changes between one branch and another
-4. Review pull request      # collaborators look it over and comment on what should be changed and why
-5. Merge and delete branch  # after a successful merge, delete your branch (keep things tidy)
+1. Create a branch (copies the project for you to work on)
+2. Commit changes (after coding whatever, commit and push to GitHub; goes to your branch)
+3. Create a pull request (this is a discussion page for code changes between one branch and another)
+4. Review pull request (collaborators look it over and comment on what should be changed and why)
+5. Merge and delete branch (after a successful merge, delete your branch; keep things tidy)
 
 **Collaborative Projects, Cloned:**
 1. Fetch and merge changes from the remote.
@@ -38,7 +38,9 @@ Steps 1 and 4 are a safeguard against merge conflicts.
 
 ## Git Username & Email
 
-**username:** Git uses a username to associate commits with an identity. The Git username is NOT the same as your GitHub username. Changing your username does NOT change previous commits.
+### Username
+
+Git uses a username to associate commits with an identity. The Git username is NOT the same as your GitHub username. Changing your username does NOT change previous commits.
 
 Set git username globally (for **every** repo on your machine)
 ```
@@ -53,18 +55,20 @@ git config user.name "Greg Kedrovsky"  # set the name for this local repo only
 git config user.name                   # confirm you set the name correctly
 ```
 
-**email:** GitHub uses your commit email address to associate commits with your account on GitHub.com. 
+### Email
+
+GitHub uses your commit email address to associate commits with your account on GitHub.com. 
 
 Setting your commit email address in Git: 
+```
  git config --global user.email "gregkedro@gmail.com"  # set an email address
  git config --global user.email                        # confirm the email address is set correctly
+```
 
-
------------------------------------------------------------------------
-Common Commands
+## Common Commands
 
 Git commands to help keep track of changes made to a project:
-
+```
 git init                       # creates a new Git repository
 git status                     # inspects the contents of the working directory and staging area
 git add [filename | wildcard]  # adds files from the working directory to the staging area
@@ -78,27 +82,29 @@ git checkout HEAD [filename]   # restore [filename] to last (HEAD) commit (undo 
 git reset HEAD [filename | . ] # removes the filename from the staging area
  
 git reset [commit_SHA]         # Restores project to the commit indicated by the first 7 chars of its SHA
+```
 
------------------------------------------------------------------------
-stash
+## Stash
 
 A place to "stash" your local work temporarily in order to update a previous commit and then after that retrieve your work you "stashed" away.
 
 Commands:
+```
  git stash      # stores current work temporarily in a hidden local directory
  git stash pop  # retrieves the code you were working on and "stashed" to do something else
- 
------------------------------------------------------------------------
-log
+```
+
+## Log
 
 Commands: 
+```
  git log                            # view the commit history of the branch you currently have checked out.
  git log --oneline                  # shows list of commits in one-line format
  git log -S "keyword"               # displays a list of commits that contain the keyword in the message
  git log --oneline --graph --graph  # display repo history (branches & commits) visually
- 
------------------------------------------------------------------------
- --amend flag
+```
+
+## Amend Flag
  
 Allows you to correct mistakes and edit commits easily instead of creating a completely new commit.
 
@@ -107,32 +113,65 @@ Workflow:
  2. You find a couple simple mistakes and don't want to make an entire new commit
  3. So, just fix your mistakes, then...
  4. command:      
+```
      git commit --amend            # updates your previous commit (replaces the entire previous commit)
      git commit --amend --no-edit  # keeps the same commit message (no prompt for a new one)
+```
 
------------------------------------------------------------------------
-alias commands
+## Alias Commands
 
 Aliases let you alias a lengthy git command you need frequently.
 
 Examples: 
+```
  git config --global alias.co "checkout"
  git config --global alias.br "branch"
  git config --global alias.glop "log --pretty=format:"%h %s" --graph"
+```
 
 Once the aliases are configured, next time you want to check out to another branch you could type the command:
+```
  git co example_branch
+```
 
 Instead of:
- git checkout example_branch
- 
------------------------------------------------------------------------
-GitHub
+```
+git checkout example_branch
+``` 
+
+## GitHub
+
 https://docs.github.com/en
 
 You can use GitHub to work on any file-based project, including coding projects, writing documentation, etc.
 - It is simply a site and service provided to store and share code (file-based information).
 
+Should be familiar with `clone`, `fetch`, `push`, `pull`, etc. 
 
+**NOTE:** GitHub has changed the naming convention of the main branch from `master` to `main`.
 
+## Branching
+
+```
+git branch                  # list branch; the asterisk (*) shows you what branch you're on
+git branch [branch_name]    # creates a new branch
+git checkout [branch_name]  # switch to the new branch
+git merge [branch_name]     # include the changes made to the new branch in the main branch
+                            # execute from within the receiver branch
+git branch -d [branch_name] # deletes a branch after you're finished with it
+```
+
+## Cloning
+
+**NOTE:* When you clone a repo, the remote address is given the name `origin` (because it is the remote repository of origin for your clone).
+
+```
+git clone [remote_location] [clone_name]  # create your own replica of a repo
+git remote -v                       # display a list of a project's remotes
+git fetch                           # check changes in remote origin & bring them into your clone
+git merge origin/master             # merge your clone master branch with the origin/master branch you fetched
+git push origin [your_branch_name]  # push your branch up to the remote/origin
+                                    # creates a branch on the remote/origin for review & merging into main
+```                                    
+                                    
 
