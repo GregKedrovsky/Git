@@ -4,31 +4,52 @@ Git Reference Docs:
 https://git-scm.com/docs
 https://ndpsoftware.com/git-cheatsheet.html
 
------------------------------------------------------------------------
+## Git Projects
+
 A Git project has three parts:
 1. Working Directory - where files are created, edited, deleted, and organized
 2. Staging Area      - where changes that are made to the working directory are listed
 3. Repository        - where Git permanently stores changes as different versions of the project
 
------------------------------------------------------------------------
-Git workflow: 
+## Git Workflow
+
+**Individual Projects:**
 1. Edit files in the working directory
 2. Add files to the staging area
 3. Save changes to a Git repository
 
------------------------------------------------------------------------
-git username & email
+**Collaborative Projects, Single Repo:**
+1. Create a branch          # copies the project for you to work on
+2. Commit changes           # after coding whatever, commit and push to GitHub (goes to your branch)
+3. Create a pull request    # this is a discussion page for code changes between one branch and another
+4. Review pull request      # collaborators look it over and comment on what should be changed and why
+5. Merge and delete branch  # after a successful merge, delete your branch (keep things tidy)
+
+**Collaborative Projects, Cloned:**
+1. Fetch and merge changes from the remote.
+2. Create a branch to work on a new project feature
+3. Develop the feature on your branch and commit your work
+4. Fetch and merge from the remote again (in case new commits were made while you were working)
+5. Push your branch up to the remote for review
+
+Steps 1 and 4 are a safeguard against merge conflicts.
+
+## Git Username & Email
 
 **username:** Git uses a username to associate commits with an identity. The Git username is NOT the same as your GitHub username. Changing your username does NOT change previous commits.
 
 Set git username globally (for **every** repo on your machine)
+'''
  git config --global user.name "Greg Kedrovsky"  # set a new username
  git config --global user.name                   # confirm you set the name correctly
+'''
 
 Set git username for a single repo only: 
- cd /dir/for/local/repo                 # change to the local repo working directory
+'''
+cd /dir/for/local/repo                 # change to the local repo working directory
  git config user.name "Greg Kedrovsky"  # set the name for this local repo only
  git config user.name                   # confirm you set the name correctly
+'''
 
 **email:** GitHub uses your commit email address to associate commits with your account on GitHub.com. 
 
