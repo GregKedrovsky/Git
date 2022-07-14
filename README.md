@@ -172,7 +172,7 @@ git branch -d [branch_name] # deletes a branch after you're finished with it
 ```
 git clone [remote_location] [clone_name]  # create your own replica of a repo
 git remote -v                       # display a list of a project's remotes
-git fetch                           # check changes in remote origin & bring them into your clone
+git fetch                           # fetches new commits from the remote, but does not merge them
 git merge origin/master             # merge your clone master branch with the origin/master branch you fetched
 git push origin [your_branch_name]  # push (copy) your branch up to the remote/origin repo
                                     # creates a branch on the remote/origin for review & merging into main
